@@ -1,0 +1,6 @@
+Band B report (4 learners)
+----------------------------------------
+Kuda       roll 2   GPA 3.2
+Nyasha     roll 9   GPA 3.0
+Anesu      roll 6   GPA 2.9
+Tendai     roll 8   GPA 2.5

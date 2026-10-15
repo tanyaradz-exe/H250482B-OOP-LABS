@@ -1,0 +1,5 @@
+Band A report (3 learners)
+----------------------------------------
+Ada        roll 1   GPA 3.9
+Tariro     roll 3   GPA 3.7
+Rudo       roll 5   GPA 3.5

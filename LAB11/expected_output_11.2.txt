@@ -1,0 +1,5 @@
+Regular: 200.0
+Student: 180.0
+Student portal: OOP = 72
+Student portal: Databases = 45
+Advisor alert: Databases failed
