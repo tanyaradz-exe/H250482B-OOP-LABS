@@ -1,0 +1,46 @@
+Loaded 2 items, 1 members, 1 loans.
+
+=== Library Menu ===
+1 Add item
+2 Register member
+3 Borrow
+4 Return
+5 List overdue
+6 Search by title
+7 List all items
+0 Save and exit
+Choice: Book B1     Clean Code                     ON LOAN  by Robert Martin (21 days)
+DVD  D1     Java Talk                      available  90 min (7 days)
+
+=== Library Menu ===
+1 Add item
+2 Register member
+3 Borrow
+4 Return
+5 List overdue
+6 Search by title
+7 List all items
+0 Save and exit
+Choice: Item id: Returned: Clean Code [B1] -> Alice (borrowed 2026-10-14, due 2026-11-04)
+
+=== Library Menu ===
+1 Add item
+2 Register member
+3 Borrow
+4 Return
+5 List overdue
+6 Search by title
+7 List all items
+0 Save and exit
+Choice: No overdue items.
+
+=== Library Menu ===
+1 Add item
+2 Register member
+3 Borrow
+4 Return
+5 List overdue
+6 Search by title
+7 List all items
+0 Save and exit
+Choice: Saved to /tmp/demo. Goodbye.

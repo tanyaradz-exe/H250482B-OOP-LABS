@@ -1,0 +1,28 @@
+digraph G {
+  rankdir=BT; node [shape=record, fontname="Helvetica", fontsize=10, style=filled, fillcolor="#f7f7fb"]; edge [fontname="Helvetica", fontsize=9];
+  Borrowable [label="{«interface»\nBorrowable|+ borrow(Member)\l+ giveBack()\l}", fillcolor="#e8f4ea"];
+  LibraryItem [label="{«abstract»\nLibraryItem|- id : String\l- title : String\l- available : boolean\l|+ loanPeriodDays() : int \{abstract\}\l+ type() : String \{abstract\}\l+ extra() : String \{abstract\}\l+ borrow(Member)\l+ giveBack()\l+ toString()\l}"];
+  Book [label="{Book|- author : String\l|+ loanPeriodDays() : int = 21\l}"];
+  Dvd [label="{Dvd|- minutes : int\l|+ loanPeriodDays() : int = 7\l}"];
+  Member [label="{Member|+ MAX_LOANS = 3\l- id : String\l- name : String\l|+ canBorrow() : boolean\l+ getLoans()\l}"];
+  Loan [label="{Loan|- borrowDate : LocalDate\l- dueDate : LocalDate\l|+ isOverdue(LocalDate)\l}"];
+  Library [label="{Library|- items : Map\<String, LibraryItem\>\l- members : Map\<String, Member\>\l- loans : List\<Loan\>\l|+ addItem / registerMember\l+ borrow(memberId, itemId, date)\l+ giveBack(itemId)\l+ searchByTitle(text)\l+ listOverdue(date)\l+ save(dir) / load(dir)\l}", fillcolor="#fff6e0"];
+  ItemNA [label="«checked exception»\nItemNotAvailableException", fillcolor="#fde8e8"];
+  MemberLim [label="«checked exception»\nMemberLimitExceededException", fillcolor="#fde8e8"];
+  Exception [label="Exception", fillcolor="#eeeeee"];
+  Main [label="Main\n(console menu)", fillcolor="#e8eefc"];
+  LibraryItem -> Borrowable [arrowhead=onormal, style=dashed, label="implements"];
+  Book -> LibraryItem [arrowhead=onormal, label="extends"];
+  Dvd -> LibraryItem [arrowhead=onormal];
+  ItemNA -> Exception [arrowhead=onormal];
+  MemberLim -> Exception [arrowhead=onormal];
+  Loan -> LibraryItem [arrowhead=vee, label="item"];
+  Loan -> Member [arrowhead=vee, label="member"];
+  Member -> Loan [arrowhead=vee, label="0..3 loans"];
+  Library -> LibraryItem [dir=both, arrowhead=none, arrowtail=odiamond, label="*"];
+  Library -> Member [dir=both, arrowhead=none, arrowtail=odiamond, label="*"];
+  Library -> Loan [dir=both, arrowhead=none, arrowtail=odiamond, label="*"];
+  Library -> ItemNA [arrowhead=vee, style=dashed, label="throws"];
+  Library -> MemberLim [arrowhead=vee, style=dashed];
+  Main -> Library [arrowhead=vee, label="uses"];
+}
